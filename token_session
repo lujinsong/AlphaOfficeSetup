@@ -1,13 +1,13 @@
 echo
-curl -o ./response.out --data '{"username":"admin","password":"WVbirder39_"}' --insecure https://140.86.39.73/api/auth
+curl -o ./response.out --data "{"username":"${USERNAME}","password":"${PASSWORD}"}" --insecure https://$IP/api/auth
 echo
 OCCS_SESSION=$(grep token ./response.out | sed 's/"//g' | sed 's/\  token: '//g | sed 's/,//')
 echo Session ID = $OCCS_SESSION
 echo
-curl -o token.out -X "POST" -H "Authorization: Session ${OCCS_SESSION}" --insecure https://140.86.39.73/api/token
+curl -o token.out -X "POST" -H "Authorization: Session ${OCCS_SESSION}" --insecure https://$IP/api/token
 echo
 OCCS_TOKEN=$(grep token ./token.out | sed 's/"//g' | sed 's/\ token: '//g | sed 's/,//')
 echo Token ID = $OCCS_TOKEN
 echo
-curl -iv -H "Authorization: Bearer ${OCCS_TOKEN}" -H "Content-Type: application/json" --data "@alphaoffice-deploy.json" --insecure https://140.86.39.73/api/v2/deployments/
-curl -iv -H "Authorization: Bearer ${OCCS_TOKEN}" -H "Content-Type: application/json" --data "@alphaoffice-stack.json" --insecure https://140.86.39.73/api/v2/stacks/
+curl -iv -H "Authorization: Bearer ${OCCS_TOKEN}" -H "Content-Type: application/json" --data "@alphaoffice-deploy.json" --insecure https://$IP/api/v2/deployments/
+curl -iv -H "Authorization: Bearer ${OCCS_TOKEN}" -H "Content-Type: application/json" --data "@alphaoffice-stack.json" --insecure https://$IP/api/v2/stacks/

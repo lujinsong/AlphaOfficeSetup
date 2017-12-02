@@ -1,5 +1,5 @@
 echo
-curl -o ./response.out --data "{"username":"${USERNAME}","password":"${PASSWORD}"}" --insecure https://$IP/api/auth
+curl -o ./response.out --data '{"username":"'"$USERNAME"'","password":"'"$PASSWORD"'"}' --insecure https://$IP/api/auth
 echo
 OCCS_SESSION=$(grep token ./response.out | sed 's/"//g' | sed 's/\  token: '//g | sed 's/,//')
 echo Session ID = $OCCS_SESSION

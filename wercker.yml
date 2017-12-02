@@ -1,0 +1,6 @@
+box: openjdk
+build:
+  steps:
+    - script:
+            name: Run AlphaOffice Deployment via OCCS REST API
+            code: ./token_session $IP $USERNAME $PASSWORD

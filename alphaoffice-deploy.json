@@ -12,6 +12,6 @@
     "service_id": "alphaoffice-stack",
     "service_name": "alphaoffice-stack",
     "subtype": "stack",
-    "content": "version: 2\nservices:\n  TwitterFeed-st:\n    image: \"wvbirder/twitterfeed\"\n    ports:\n      - \"9080:9080/tcp\"\n    environment:\n      - OCCS_PHASE_ID=0\n      - \"occs:description=TwitterFeed example of static tweets\"\n\n  AlphaOfficeREST-st:\n    image: \"wvbirder/alphaofficerest\"\n    ports:\n      - \"8002:8002/tcp\"\n    environment:\n      - OCCS_PHASE_ID=1\n      - \"occs:description=Alpha Office REST - non DB\"\n\n  AlphaOfficeCatalogUI-st:\n    image: \"wvbirder/alpha-office-catalog-ui\"\n    ports:\n      - \"8085:8085/tcp\"\n    environment:\n      - OCCS_PHASE_ID=2\n      - \"occs:description=Alpha Office Product Catalog UI\"\n"
+    "content": "version: 2\nservices:\n  TwitterFeed-st:\n    image: \"wvbirder/twitterfeed\"\n    ports:\n      - \"9080:9080/tcp\"\n    environment:\n      - OCCS_PHASE_ID=0\n      - \"occs:description=TwitterFeed example of static tweets\"\n\n  AlphaOfficeREST-st:\n    image: \"wvbirder/alphaofficerest\"\n    ports:\n      - \"8002:8002/tcp\"\n    environment:\n      - OCCS_PHASE_ID=1\n      - \"occs:description=Alpha Office REST - non DB\"\n\n  AlphaOfficeCatalogUI-st:\n    image: \"wvbirder/alpha-office-catalog-ui\"\n    ports:\n      - \"8085/tcp\"\n    environment:\n      - OCCS_PHASE_ID=2\n      - \"occs:description=Alpha Office Product Catalog UI\"\n"
   }
 }

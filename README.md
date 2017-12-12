@@ -36,5 +36,5 @@ These scripts suuport various Workshops for the AlphaOffice usecase.
      
        setupAlphaDB.sql
        products.in
-       catergories.in
+       categories.in
   

@@ -16,7 +16,7 @@ These scripts suuport various Workshops for the AlphaOffice usecase.
      alphaoffice-stack.json
      
      These scripts use the Container Service Classic REST API's to deploy the three containers
-     created in previous labs. The images must be already pushed to the docker registry.
+     created in previous labs. The images must be already pushed to a docker registry.
      
   3) AlphaOffice ORACLE database setup scripts (Modified to work with populating an EE version of
      the Oracle database obtained from the Oracle Docker Store

@@ -17,4 +17,24 @@ These scripts suuport various Workshops for the AlphaOffice usecase.
      
      These scripts use the Container Service Classic REST API's to deploy the three containers
      created in previous labs. The images must be already pushed to the docker registry.
+     
+  3) AlphaOffice ORACLE database setup scripts (Modified to work with populating an EE version of
+     the Oracle database obtained from the Oracle Docker Store
+     )
+     The setupAlphaDB.sql is run from within a OracleDB container from SQLPLUS using the mounted
+     volume that's defined for that container.
+     
+     The setup does the following:
+       Sets NOARCHIVELOG to conserve container disk space
+       Configures HTTP and HTTPS ports for Enterprise Express
+       Creates the "alpha" user in the supplied PDB
+       populates the PRODUCTS and PRODUCT_CATEGORIES tables
+       
+     Ex: (in container)
+       sqlplus / as sysdba
+       SQL> @/<your-mount-point/setupAlphaDB.sql
+     
+       setupAlphaDB.sql
+       products.in
+       catergories.in
   
